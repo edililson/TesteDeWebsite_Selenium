@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ConsultaECadastro {
+public class Consulta {
 
 	static WebDriver driver;
 
@@ -24,7 +24,7 @@ public class ConsultaECadastro {
 
 	@After
 	public void tearDown() throws Exception {
-		//driver.quit();
+		driver.quit();
 	}
 	
 
@@ -45,9 +45,10 @@ public class ConsultaECadastro {
 		String verificar_tombo = driver.findElement(By.id("tombo_item")).getAttribute("value");
 		assertEquals("123", verificar_tombo);
 		
-		driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div[2]/button")).click();
 		
-		//Thread.sleep(3000);// da um timeout para o navegador ativar a função drive.quit() depois de 3 segundos == 3000 milesegundos
+		//driver.findElement(By.className("modal-content")).findElement(By.className("modal-footer")).findElement(By.id("fechar_modal")).click();;
+		
+		Thread.sleep(3000);// da um timeout para o navegador ativar a função drive.quit() depois de 3 segundos == 3000 milesegundos
 	}
 
 }
